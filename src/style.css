@@ -1,0 +1,241 @@
+@font-face
+{
+    font-family: PixelRegular;
+
+    src: url(./font/PixelRegular.ttf);
+}
+html, body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+*
+{
+    color: white;
+    font-family: PixelRegular, sans-serif;
+    font-weight: 100;
+    list-style-type: none;
+    -moz-user-select: none;
+    user-select: none;
+    -khtml-user-select: none;
+}
+#root
+{
+    width: 100%;
+    height: 100%;
+}
+.wrapper
+{
+    width: 100%;
+    height: 100%;
+}
+.menu
+{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+}
+.menu__mute
+{
+    transition: 0.2s;
+    filter: blur(10px);
+}
+.menu__topPanel
+{
+    padding: 15px;
+    width: calc(100% - 30px);
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.menu__start
+{
+    position: absolute;
+    top: calc(70% - 75px);
+    left: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__start__button
+{
+    width: 140px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #FFFFFFAA;
+    font-size: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.menu__start__button:hover
+{
+    background-color: #FFFFFF0F;
+    transition: 0.2s;
+}
+.menu__start__button__clicked
+{
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 0;
+    border-right: 0;
+    animation: 2s linear infinite rotation;
+    cursor: progress;
+    transition: 0.2s;
+}
+.menu__start__button__clicked:hover
+{
+    background-color: transparent;
+}
+@keyframes rotation
+{
+    from
+    {
+        transform: rotateZ(0deg);
+    }
+    to
+    {
+        transform: rotateZ(360deg);
+    }
+}
+.menu__topPanel
+{
+    position: absolute;
+    z-index: 5;
+}
+.menu__topPanel-button
+{
+    padding: 0;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+.menu__topPanel-button:hover
+{
+    background-color: #FFFFFF33;
+    transition: 0.2s;
+}
+.menu__topPanel-image
+{
+    width: 40px;
+    height: 40px;
+}
+.window
+{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: 25%;
+    left: calc(50% - 300px);
+    border: 1px solid #FFFFFFAA;
+    background-color: #09090966;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+.window-head
+{
+    position: relative;
+    width: 100%;
+    min-height: 30px;
+    background-color: #1F1F1FAA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+.window-head-cross-block
+{
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.window-head-cross,
+.window-head-cross::before
+{
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #FFF;
+}
+.window-head-cross
+{
+    transform: rotateZ(-45deg);
+}
+.window-head-cross::before
+{
+    content: '';
+    top: 0;
+    right: 0;
+    transform: rotateZ(90deg);
+}
+.window-content
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.window-content::-webkit-scrollbar-track
+{
+    background-color: rgba(0, 0, 0, .3);
+}
+.window-content::-webkit-scrollbar-thumb
+{
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .4);
+}
+.window-content::-webkit-scrollbar
+{
+    width: 8px;
+}
+.window-content__info-image
+{
+    width: 100%;
+    min-width: 300px;
+}
+.window-resize
+{
+    position: absolute;
+    bottom: -7px;
+    right: -7px;
+    width: 15px;
+    height: 15px;
+    background-color: #FFFFFFAA;
+    transform: rotateZ(45deg);
+    cursor: nwse-resize;
+}
+.window__disable
+{
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 0;
+    display: none;
+}
+.game
+{
+    width: 100%;
+    height: 100%;
+}
+.game-canvas
+{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
